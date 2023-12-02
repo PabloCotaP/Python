@@ -30,3 +30,35 @@ while True:
         area = area_trian(b, h)
         print(f"El area de triangulo es: {area}")
         break
+    
+def gen_alum():
+    alumno = {}
+
+    while True:
+        try: 
+            matricula = int(input("\nIngrese su matricula: "))
+            nombre = input("Ingrese su nombre: ")
+            ap_pat = input("Ingrese su apellido paterno: ")
+            ap_mat = input("Ingrese su apellido materno: ")
+            edad = int(input("Ingrese su edad: "))
+            sexo = int(input("Ingrese 1 si es hombre o 2 si es mujer: "))
+        except:
+            print("Uno de los valores es invalido pruebe de nuevo")
+        else:
+            alumno['id'] = matricula
+            alumno['nombre'] = nombre
+            alumno['ap_pat'] = ap_pat
+            alumno['ap_mat'] = ap_mat
+            alumno['edad'] = edad
+            if sexo == 1:
+                alumno['sexo'] = "Hombre"
+            else:
+                alumno["sexo"] = "Mujer"
+            break
+        
+    return alumno
+
+alumno = gen_alum()
+print("\n")
+for key in alumno:
+    print(f"{key}: {alumno[key]}")
